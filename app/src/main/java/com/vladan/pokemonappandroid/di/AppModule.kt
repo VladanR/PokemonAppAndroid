@@ -2,7 +2,7 @@ package com.vladan.pokemonappandroid.di
 
 import com.vladan.pokemonappandroid.data.remote.PokeApi
 import com.vladan.pokemonappandroid.data.remote.repository.PokemonRepository
-import com.vladan.pokemonappandroid.utils.Constants
+import com.vladan.pokemonappandroid.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,7 +23,7 @@ object AppModule {
     fun providePokeApi() : PokeApi {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(Constants.baseURL)
+            .baseUrl(BASE_URL)
             .build()
             .create(PokeApi::class.java)
     }

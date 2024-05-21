@@ -1,5 +1,5 @@
 package com.vladan.pokemonappandroid.data.remote.responses.pokemonDetails
 
 data class GenerationV(
-    val black-white: BlackWhite
+    val black_white: BlackWhite
 )

@@ -66,14 +66,15 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.constraintlayout.compose)
-    implementation(libs.appcompat.v7)
+//    implementation(libs.appcompat.v7)
 
     // Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+    implementation(libs.gson)
+
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
-
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
@@ -85,13 +86,17 @@ dependencies {
     //Dagger - Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
-    implementation(libs.androidx.hilt.lifecycle.viewmodel)
     kapt(libs.androidx.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
 
+    // Coil
+//    implementation(libs.coil)
+//    implementation(libs.accompanist.coil)
+    implementation(libs.coil.compose)
     implementation(libs.palette.v7)
 
     testImplementation(libs.junit)
+    testImplementation(libs.mockwebserver)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -99,4 +104,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+}
+kapt {
+    correctErrorTypes = true
 }

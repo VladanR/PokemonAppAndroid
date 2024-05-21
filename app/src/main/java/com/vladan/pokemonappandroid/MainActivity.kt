@@ -1,5 +1,7 @@
 package com.vladan.pokemonappandroid
 
+import android.content.Context
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,6 +12,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.core.app.ActivityCompat
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -18,6 +21,7 @@ import androidx.navigation.navArgument
 import com.vladan.pokemonappandroid.ui.theme.PokemonAppAndroidTheme
 import com.vladan.pokemonappandroid.view.PokemonListScreen
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -60,5 +64,19 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+    fun hasPermissions(context: Context?, vararg permissions: String?): Boolean {
+        if (context != null) {
+            for (permission in permissions) {
+                if (ActivityCompat.checkSelfPermission(
+                        context,
+                        permission!!
+                    ) != PackageManager.PERMISSION_GRANTED
+                ) {
+                    return false
+                }
+            }
+        }
+        return true
     }
 }

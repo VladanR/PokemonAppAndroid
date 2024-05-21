@@ -5,9 +5,10 @@ import com.vladan.pokemonappandroid.data.remote.responses.pokemonDetails.Pokemon
 import com.vladan.pokemonappandroid.data.remote.responses.pokemonList.PokemonList
 import com.vladan.pokemonappandroid.utils.Resource
 import dagger.hilt.android.scopes.ActivityScoped
+import dagger.hilt.android.scopes.ViewModelScoped
 import javax.inject.Inject
 
-@ActivityScoped
+@ViewModelScoped
 class PokemonRepository @Inject constructor(
     private val api: PokeApi
 ){

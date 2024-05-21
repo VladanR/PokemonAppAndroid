@@ -1,5 +1,6 @@
 package com.vladan.pokemonappandroid.utils
 
 object Constants {
-    const val baseURL= "https://pokeapi.co/"
+    const val BASE_URL= "https://pokeapi.co/api/v2/"
+    const val PAGE_SIZE = 20
 }
